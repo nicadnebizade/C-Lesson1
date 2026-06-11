@@ -1,0 +1,40 @@
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography.X509Certificates;
+using static System.Net.WebRequestMethods;
+
+namespace Nicat_C#
+{
+    internal class Program{
+        enum Type{
+                BMW = 1,
+                Mercedes,
+                Lex,
+                Toyota
+            }
+        static void Main(string[] args)
+        {  
+            Type Car;
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Write((i + 1 )+" ");
+                Console.WriteLine((Type)i);
+            }
+            Console.Write("Enter The car Marka: ");
+            int Secim = Convert.ToInt32(Console.ReadLine());
+            if(Secim<0 || Secim > 4)
+            {
+                Console.WriteLine("Error: Yanlis secim etme !!!");
+            }
+            else
+            {
+                Console.WriteLine((Type)Secim);
+            }
+                //Enum nedir ?
+                //Enum evveller c++ da hardasa 2 ay boyunca istifade etdiyimiz bir seydir
+                //Enumda men bildiyim qederi ile reqemler ile daha cox isleyirdi Bir Index kimide
+                //Enum icerisinde olan secimler xaricinde her hansisa bir secim daxil etmek olmur buda bezi log in qisimlerinde yadaki meselen hansi ayda dogulduqunu daxil etdikde yada hansi cins hansi il olduqunu daxil etdiyinde sadece enumda olan secimleri daxil ede bilecek ve buda bizim yaxsiliqimiz ucundur
+                //Buda kisa qeyd
+        }
+    }
+}
